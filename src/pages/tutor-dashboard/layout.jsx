@@ -1,16 +1,16 @@
-import { Outlet } from "react-router-dom";
-
-import Sidebar from "./components/Sidebar";
+import { DashboardAppbar } from './TutorDashboard';
+import Sidebar from './components/Sidebar';
 
 const Layout = ({ children }) => {
-  return (
-    <div className='flex h-screen'>
-      <Sidebar />
-      <div>
-        {children}
-      </div>
-    </div>
-  );
-}
+	return (
+		<div className='flex h-screen'>
+			<Sidebar />
+			<div>
+				<DashboardAppbar />
+				<div className='overflow-y-auto'>{children}</div>
+			</div>
+		</div>
+	);
+};
 
 export default Layout;

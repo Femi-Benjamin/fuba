@@ -1,6 +1,7 @@
 import Appbar from '../containers/Appbar';
 import Hero from './pagesections/Hero';
 import { Button } from '../containers/Appbar';
+import coursesData from '../assets/static/courseData';
 
 const Home = () => {
 	return (
@@ -69,7 +70,9 @@ const SecondSection = () => {
 
 const AboutUs = () => {
 	return (
-		<div className='flex gap-5 pr-5 mb-16 2xl:px-56'>
+		<div
+			id='about'
+			className='flex gap-5 pr-5 mb-16 2xl:px-56'>
 			<div>
 				<img
 					src='/fubalearning.png'
@@ -129,7 +132,7 @@ const AboutUs = () => {
 				</div>
 				<div>
 					<Button
-						link="/signup"
+						link='/signup'
 						background='bg-[#280D46]'
 						text='Explore'
 						color='text-white'
@@ -154,46 +157,51 @@ const Courses = () => {
 				<p className='mb-2'>Popular Courses</p>
 			</>
 			<div className='grid grid-cols-3 grid-row-2'>
-				<div className='w-[400px] shadow bg-white h-[529px] rounded-lg'>
-					<div>
-						<img
-							className='rounded-tl-lg rounded-tr-lg'
-							src='/unsplash1.png'
-							alt=''
-						/>
-					</div>
-					<div className='px-12'>
-						<img
-							className='mb-5 -mt-6 rounded-full'
-							src='/fubadp.png'
-							alt=''
-						/>
-						<p className='text-sm text-[#FF3D00] mb-4'>Philip Ola</p>
-						<h2 className='mb-2 text-xl font-semibold'>Becoming a Freelancer</h2>
-						<img
-							className='mb-3'
-							src='/stars.svg'
-							alt=''
-						/>
-						<p className='mb-6 text-lg font-semibold'>#10,000</p>
-						<hr />
-						<div className='flex items-center gap-5 mt-6'>
-							<div>
-								<p>4 Modules</p>
-							</div>
-							<div>
-								<p>4 Hours</p>
-							</div>
-							<div>
-								<p>Beginner</p>
+				{coursesData.map((course) => (
+					<div
+						key={course.id}
+						className='w-[400px] shadow bg-white h-[529px] rounded-lg mb-20'>
+						<div>
+							<img
+								className='rounded-tl-lg rounded-tr-lg'
+								src={course.image}
+								alt=''
+							/>
+						</div>
+						<div className='px-12'>
+							<img
+								className='mb-5 -mt-6 rounded-full'
+								src={course.instructorImage}
+								alt=''
+							/>
+							<p className='text-sm text-[#FF3D00] mb-4'>{course.instructorName}</p>
+							<h2 className='mb-2 text-xl font-semibold'>{course.title}</h2>
+							{/* Render stars based on the rating */}
+							<img
+								className='mb-3'
+								src='/stars.svg'
+								alt=''
+							/>
+							<p className='mb-6 text-lg font-semibold'>#{course.price}</p>
+							<hr />
+							<div className='flex items-center gap-5 mt-6'>
+								<div>
+									<p>{course.modules} Modules</p>
+								</div>
+								<div>
+									<p>{course.hours} Hours</p>
+								</div>
+								<div>
+									<p>{course.difficulty}</p>
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>
+				))}
 			</div>
 			<div className='flex items-center justify-center'>
 				<Button
-					link="/courses"
+					link='/courses'
 					background='bg-[#280D46]'
 					text='VIEW ALL COURSES'
 					color='text-white'
@@ -290,7 +298,7 @@ const AboutTeam = () => {
 
 const ContactUs = () => {
 	return (
-		<div className='flex items-center justify-between mb-32 2xl:px-56'>
+		<div id="contact" className='flex items-center justify-between mb-32 2xl:px-56'>
 			<div>
 				<img
 					className='mb-2'

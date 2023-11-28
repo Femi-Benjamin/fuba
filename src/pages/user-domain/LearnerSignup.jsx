@@ -1,6 +1,15 @@
+import { useNavigate } from 'react-router-dom';
+
 import fubalogo from '../../assets/fubalogo.svg';
 
 const LearnerSignup = () => {
+	const navigate = useNavigate();
+
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		navigate("/");
+	}
+	
 	return (
 		<div className='flex h-screen'>
 			<div className='w-[50%]'>
@@ -24,7 +33,7 @@ const LearnerSignup = () => {
 					</div>
 
 					<div className='mb-9'>
-						<form>
+						<form onSubmit={handleSubmit}>
 							<label>
 								Full name
 								<input

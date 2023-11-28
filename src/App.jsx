@@ -27,7 +27,7 @@ function App() {
         <Route path="/learner-signup" element={<LearnerSignup />} />
         <Route path="/login" element={<Login />} />
         <Route path="/dashboard" element={<TutorDashboard />} />
-        <Route path="/upload-course" element={<UploadCourse />} />
+        <Route path="/upload_course" element={<UploadCourse />} />
         <Route path="/videos" element={<Videos />} />
         <Route path="/settings" element={<Settings />} />
         <Route path="/drafts" element={<Drafts />} />
