@@ -6,7 +6,8 @@ const TutorDashboard = () => {
 	return (
 		<Layout>
 			<div className='mt-12 px-12'>
-				<div className='px-1 py-1 w-[100%] bg-[#280D46] h-[231px] rounded'></div>
+				<div className='px-1 py-1 w-[100%] bg-gradient-to-b from-[#280D46] to-[#FFF]  h-[231px] rounded'></div> {/* bg-[#280D46] */}
+			
 				<div className='flex justify-between px-5 -mt-20'>
 					<div className='bg-white h-[160px] border border-gray-200 w-[305px] rounded px-7 py-5'>
 						<div>

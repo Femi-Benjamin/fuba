@@ -2,6 +2,7 @@ import Appbar from '../containers/Appbar';
 import Hero from './pagesections/Hero';
 import { Button } from '../containers/Appbar';
 import coursesData from '../assets/static/courseData';
+import Footer from './components/Footer';
 
 const Home = () => {
 	return (
@@ -17,6 +18,7 @@ const Home = () => {
 				<Services />
 				<AboutTeam />
 				<ContactUs />
+				<Footer />
 			</>
 		</div>
 	);
@@ -321,5 +323,6 @@ const ContactUs = () => {
 				/>
 			</div>
 		</div>
+
 	);
 };
